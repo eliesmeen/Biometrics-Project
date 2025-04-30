@@ -23,7 +23,7 @@ def extract_landmarks(image_path):
 
     #Loading pre-trained face detector
     detector = dlib.get_frontal_face_detector()
-    predictor = dlib.shape_predictor("/Users/eliesmeen/Downloads/Biometrics-Project-main/shape_predictor_68_face_landmarks.dat")
+    predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 
     # Read image from file path
     img = cv2.imread(image_path)
@@ -90,8 +90,8 @@ def extract_features_from_folder(folder_path):
 # STEP 4: Load Datasets and call function extract_features_from_folder - The clean shaven dataset and facial hair dataset is extarcted seperatately
 # X_ value stores the feature vectors 
 # Y_ value stores the ID Number
-X_clean, y_clean = extract_features_from_folder("/Users/eliesmeen/Downloads/Biometrics-Project-main/Facial_hair_dataset_1/faces")
-X_beard, y_beard = extract_features_from_folder("/Users/eliesmeen/Downloads/Biometrics-Project-main/Facial_hair_dataset_1/Facial_Hair_Thick_beard")
+X_clean, y_clean = extract_features_from_folder("Facial Hair Datasets/faces")
+X_beard, y_beard = extract_features_from_folder("Facial Hair Datasets/Facial_Hair_Thick_beard")
 
 #Prints success status of Clean and Bearded images
 print(f"[INFO] Clean images processed: {len(X_clean)}")

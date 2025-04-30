@@ -13,9 +13,9 @@ pipe = StableDiffusionInstructPix2PixPipeline.from_pretrained(
 # Override the safety checker
 pipe.safety_checker = lambda images, **kwargs: (images, [False] * len(images))
 
-# Define folders
-input_folder = r"C:\Users\Owner\Downloads\faces"
-output_folder = r"C:\Users\Owner\Downloads\Faces_Beard_Adjusted"
+# Define folders - CHANGE TO YOUR OWN FILE PATH!
+input_folder = r"Facial Hair Datasets\faces"
+output_folder = r"Facial Hair Datasets\Faces_Beard_Adjusted"
 os.makedirs(output_folder, exist_ok=True)
 
 # Prompt for beard addition to dataset
